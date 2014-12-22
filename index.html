@@ -4,70 +4,9 @@
   <meta charset="UTF-8">
   <title>Document</title>
   <style>
-   .campo{
-      width: 156px;
-      height: 156px;                
-      border: 1px solid black;
-      margin-left: 33%;
-      margin-top: 120px;        
-    }
-
-    .campo div{
-      width: 50px;
-      height: 50px;
-      border: 1px solid black;
-      float: left;
-      background-color: #938A8A;        
-      font-size: 30;  
-      text-align: center;
-    }
-
-    .mensaje{
-      margin-left: 33%;
-    }
-
   </style>
-  <script type="text/javascript">
-
-    function iniciarCampo(){
-      for(var i = 0; i < 3; i++){
-        for(var j = 0; j < 3; j++){                
-          var div = document.createElement("div");
-          div.id = i + "" + j;                  
-          div.addEventListener("click", clickCelda, true);                  
-          campoMinado.appendChild(div);
-        }
-      }        
-    }
-
-    function clickCelda(){
-      var celdaId = this.id.split("")[0] + this.id.split("")[1];
-      var x = this.id.split("")[0], y = this.id.split("")[1]
-      darResultado(x, y);
-    }
-
-    function darResultado(x,y){
-      var campo = [ [ 1 , 0 , 0 ] ,
-              [ 0 , 1 , 0 ] ,
-              [ 1 , 0 , 1 ] ];
-
-      if(x <= 2 && y <= 2){
-        var posicion = campo[x][y];
-        //If ternario o compacto
-        posicion == 1 ? explosion() : ganaste() ;
-      }
-    }
-
-    function explosion(){
-      alert("BOOM!!");
-      resultado.innerHTML = "BOOM! Elegiste un area minada :(";
-    }
-
-    function ganaste(){
-      resultado.innerHTML = "Eres un ganador :)";    
-    }
-
-  </script>
+  <script type="text/javascript" src = "codigo.js"></script>
+  <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
   <div class="campo" id="campoMinado">
